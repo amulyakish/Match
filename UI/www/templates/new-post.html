@@ -1,0 +1,51 @@
+<ion-view title="New Post">
+    <ion-content has-header="true" padding="true">
+        <form name="myForm"  ng-submit="postNew()" ng-controller="NewPostCtrl">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Opportunity Title</span>
+                    <input type="text" placeholder="Opportunity Title" name="title" ng-model="offer.offerTitle" required >
+                    <p ng-show="(myForm.title.$dirty || submitted) && myForm.title.$error.required"><span style="color:red">Title is required </span></p>
+                </label>
+                <label class="item item-input ">
+                    <span class="input-label">Description</span>
+                    <input type="text" placeholder="Description" name="desc" ng-model="offer.description" >
+                </label>
+                <label class="item item-input ">
+                    <span class="input-label">Contact Person</span>
+                    <input type="text" placeholder="Contact Person" name="cp" ng-model="offer.contactName" >
+                </label>
+                <label class="item item-input ">
+                    <span class="input-label">Phone Number</span>
+                    <input type="number" placeholder="Phone Number" name="phone" min="7000000000" max="9999999999" ng-model="offer.phoneNo" >
+                    <p ng-show="(myForm.title.$dirty || submitted) && myForm.title.$valid"><span style="color:red">Expects a number</span></p>
+                </label>
+                <label class="item item-input ">
+                    <span class="input-label">Offer Type</span>
+                    <input type="text" placeholder="Offer Type" name="type" ng-model="offer.offerType" >
+                </label>
+                <label class="item item-input ">
+                    <span class="input-label">Offer Date</span>
+                    <input type="date" placeholder="Offer Date (yyyy-MM-dd)" name="date" min="2015-11-01" max="2017-12-31"   ng-model="offer.offerDate">
+                    <p ng-show="(myForm.title.$dirty || submitted) && myForm.title.$valid"><span style="color:red">Expects a date</span></p>
+                </label>
+                <label class="item item-input ">
+                    <span class="input-label">Duration</span>
+                    <input type="number" min="1" placeholder="Duration in hours" name="duration" ng-model="offer.duration" >
+                    <p ng-show="(myForm.title.$dirty || submitted) && myForm.title.$valid"><span style="color:red">Expects a number</span></p>
+                </label>
+                <label class="item item-input ">
+                    <span class="input-label">Requirement</span>
+                    <input type="number" placeholder="Requirement" name="req" ng-model="offer.nofpeople" min="1" >
+                    <p ng-show="(myForm.title.$dirty || submitted) && myForm.title.$valid"><span style="color:red">Expects a number</span></p>
+                </label>
+                <label class="item item-input ">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email" name="email" ng-model="offer.ngo.email" >
+                    <p ng-show="(myForm.title.$dirty || submitted) && myForm.title.$valid"><span style="color:red">Not a valid email</span></p>
+                </label>
+            </div>
+                <button class="button icon-right  button-positive" type="submit" ng-click="postNew()">Post Opportunity</button>
+        </form>
+    </ion-content>
+</ion-view>

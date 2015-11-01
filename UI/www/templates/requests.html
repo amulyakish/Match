@@ -1,0 +1,76 @@
+<ion-view>
+    <ion-nav-title>
+        {{op.ngo.ngoName}} -- {{op.offerTitle}}
+    </ion-nav-title>
+    <ion-content has-header="true" padding="true">
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+                <div class="row">
+                    <div class="col">
+                        <div class="list card list-inset">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="{{op.ngo.pic.url }}"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="list list-inset">
+                                        <div class="item">
+                                            {{op.description}}
+                                        </div>
+                                        <div class="item">
+                                            For a duration of {{op.duration}} hrs on {{date}}.
+                                        </div>
+                                        <div class="item">
+                                            <div class="row">
+                                               <p> <a ng-click="dialNumber()" href="tel:{{ngos.phoneNo}}"><i class="icon ion-ios-telephone"></i> {{op.phoneNo}}</a></p>
+                                            </div>
+                                            <div class="row">
+                                                <p> <a ng-click="sendEmail()" href="mailto:{{op.ngo.email}}"><i class="icon ion-ios-email"></i> {{op.ngo.email}}</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <button class="button icon-lefticon ion-close-round button-assertive" ng-click="cancelOpportunity(op.objectId)">&nbsp;&nbsp;Cancel Opportunity</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-75">
+                        <div class="list card  list-inset">
+                            <ion-list>
+                                <ion-item ng-repeat="booking in bookings" type="item-text-wrap" class="item-avatar" ng-style="{'height': '10%'}">
+                                    <div class="row">
+                                        <div class="col col-40">
+                                            <img src="{{booking.volunteer.pic.url}}"/>
+                                        </div>
+                                        <div class="col col-40">
+                                             {{booking.volunteer.firstname}} {{booking.volunteer.lastName}}
+                                            <rating readonly="true" ng-model="booking.volunteer.rating" max="5">{{booking.volunteer.rating}}</rating>
+                                         </div>
+                                        <div class="col">
+                                            <a ng-class="{'button button-icon icon ion-ios-checkmark-outline disabled': booking.status === 'declined', 'button button-icon icon ion-ios-checkmark balanced': booking.status === 'accepted','button button-icon icon ion-ios-checkmark-outline balanced':booking.status === 'pending'}" ng-click="booking.status = acceptClicked(booking.status)"></a>
+                                            <a ng-class="{'button button-icon icon ion-ios-close-outline disabled': booking.status === 'accepted','button button-icon icon ion-ios-close assertive': booking.status === 'declined','button button-icon icon ion-ios-close-outline assertive':booking.status === 'pending'}" ng-click="booking.status = declineClicked(booking.status)"></a>
+                                        </div>
+                                     </div>
+                                </ion-item>
+                            </ion-list>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide title="Analytics" icon-on="ion-ios-calculator " icon-off="ion-ios-calculator-outline">
+                <div class="bar bar-header bar-positive">
+                    <h1 class="title"> Volunteer Distribution </h1>
+                </div>
+                <div class="has-header has-footer" style="position: absolute;width: 100%;height: 100%;">
+                    <div google-chart chart1="sampleData" style="width: 100%;height:90%;border: 1px solid green;padding-bottom: 44px" >
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>
+

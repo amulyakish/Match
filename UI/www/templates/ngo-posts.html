@@ -1,0 +1,29 @@
+<ion-view title="Opportunities">
+    <ion-nav-buttons side="right">
+        <a class="button button-clear button-positive" href="#/ngo-profile/{{offers[0].ngo.objectId}}">My Profile</a>
+    </ion-nav-buttons>
+    <div class="bar bar-subheader item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input id="searchKey" type="search" placeholder="Search" ng-model="searchKey" autocorrect="off" >
+            <button class="button button-clear" ng-click="clearSearch()">X</button>
+        </label>
+        <button class="button button-clear" ng-click="search()">Search</button>
+    </div>
+    <ion-content class="has-header has-subheader">
+        <ion-list>
+            <ion-item ng-repeat="offer in offers" type="item-text-wrap" class="item-avatar"
+                      href="#/post-desc/{{offer.ngo.objectId}}/{{offer.objectId}}">
+                <img src="{{offer.ngo.pic.url}}"/>
+                {{offer.offerTitle}}
+                <p>{{offer.duration}}</p>
+            </ion-item>
+        </ion-list>
+        <div class="list">
+            <div class="pull-right">
+                <a class="button icon-right ion-chevron-right button-balanced" href="#/new-post/{{offer.ngo.objectId}}">Post New</a>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

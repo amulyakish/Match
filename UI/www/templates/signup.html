@@ -1,0 +1,51 @@
+<ion-view title="Sign Up">
+    <ion-content padding="true" class="has-header">
+        <form>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Contact Name</span>
+                    <input type="text" placeholder="enter username..." ng-model="data.username">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="text" placeholder="you@domain.com" ng-model="data.email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="At least 6 characters" ng-model="data.password">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Contact No.</span>
+                    <input type="text" placeholder="" ng-model="data.phoneNo">
+                </label>
+                <div class="row">
+                <ion-radio class="col" ng-model="data.type" ng-value="'ngo'" >NGO</ion-radio>
+                <ion-radio class="col" ng-model="data.type" ng-value="'volunteer'" >Volunteer</ion-radio></div>
+
+
+                       <div ng-show="data.type === 'ngo'">
+                           <ion-list>
+                               <label class="item item-input">
+                                   <span class="input-label">Organization </span>
+                                   <input type="text" placeholder="Name" ng-model="data.ngoName">
+                               </label>
+                               <label class="item item-input">
+                                   <span class="input-label">Description</span>
+                                   <input type="text" placeholder="Aim" ng-model="data.description">
+                               </label>
+                               <label class="item item-input">
+                                   <span class="input-label">Address</span>
+                                   <input type="text" placeholder="Your address" ng-model="data.address">
+                               </label>
+                               <label class="item item-input">
+                                   <span class="input-label">Profile Picture</span>
+                                   <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                                           accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+                                       Select Picture</button>
+                               </label>
+                           </ion-list>
+                        </div>
+            <button class="button button-stable button-block" ng-click="signup(data)">Done</button>
+        </form>
+    </ion-content>
+</ion-view>

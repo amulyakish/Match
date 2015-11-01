@@ -1,0 +1,42 @@
+<ion-view>
+    <ion-nav-title>
+        <rating readonly="true" ng-model="ngos.rating" max="5">{{ngos.rating}}</rating>
+    </ion-nav-title>
+    <ion-content has-header="true" padding="true">
+
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="{{ngos.pic.url }}"/>
+            </div>
+
+            <label class="item item-input">
+                <span class="input-label">Name</span>
+                <h2>{{ngos.ngoName}}</h2>
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label">Address</span>
+                <input type="text" placeholder="{{ngos.address}}" ng-model="ngos.address">
+            </label>
+
+            <label class="item item-input" >
+                <span class="input-label">Description</span>
+                <input type="text" placeholder={{ngos.description}} ng-model="ngos.description">
+            </label>
+
+            <label class="item item-input ">
+                <span class="input-label">Phone</span>
+                <input type="number" placeholder="{{ngos.phoneNo}}" ng-model="ngos.phoneNo"></a>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="{{ngos.email}}" ng-model="ngos.email"></a>
+            </label>
+        </div>
+        <div class="pull-right">
+            <a class="button icon-right ion-chevron-right button-energized" href="#">Update</a>
+        </div>
+
+    </ion-content>
+
+</ion-view>

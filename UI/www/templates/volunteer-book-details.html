@@ -1,0 +1,23 @@
+<ion-view >
+    <ion-nav-title>
+        <img src="{{offer.ngo.pic.url}}" height="30px" width=""30px> {{offer.offerTitle}}
+    </ion-nav-title>
+    <ion-content has-header="true" padding="true">
+
+        <div class="list">
+            <a class="item item-icon-left" href="#"><i class="icon ion-android-document"></i><p>{{offer.description}}</p></a>
+            <a class="item item-icon-left" href="#"><i class="icon ion-android-contact"></i><p>{{offer.contactName}}</p></a>
+            <a class="item item-icon-left" ng-click="dialNumber()" href="tel:{{offer.phoneNo}}"><i class="icon ion-ios-telephone"></i><p>{{offer.phoneNo}}</p></a>
+            <a class="item item-icon-left" href="#"><i class="icon ion-ios-pie"></i><p>{{offer.offerType}}</p></a>
+            <a class="item item-icon-left" href="#"><i class="icon ion-android-calendar"></i><p>{{dateText}}</p></a>
+            <a class="item item-icon-left" href="#"><i class="icon ion-ios-timer"></i><p>{{offer.duration}}</p></a>
+            <a class="item item-icon-left" href="#"><i class="icon ion-ios-people"></i><p>{{offer.nofpeople}}</p></a>
+            <a class="item item-icon-left" ng-click="sendEmail()" href="mailto:{{offer.ngo.email}}"><i class="icon ion-ios-email"></i><p>{{offer.ngo.email}}</p></a>
+        </div>
+        <div class="pull-right">
+            <a class="button icon-right ion-chevron-right button-energized" href="#/ngo/{{offer.ngo.objectId}}/{{offer.objectId}}/bookNow">Volunteer Now</a>
+            <a class="button icon-right ion-more button-positive ">Pre-book</a>
+        </div>
+    </ion-content>
+
+</ion-view>

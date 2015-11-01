@@ -1,0 +1,34 @@
+<ion-view title="Oppoutunities">
+    <div class="bar bar-subheader">
+        <button class="button icon ion-navicon"></button>
+        <h1 class="title">Opportunities Offered</h1>
+        <a class="button button-clear button-positive" href="#/ngo/{{offers[0].ngo.objectId}}">About NGO</a>
+    </div>
+    <div class="bar bar-subheader item-input-inset">
+        <div class="row responsive-sm" style="width:100%;position: inherit ">
+            <div class="col col-75">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input id="searchKey" type="search" placeholder="Search" ng-model="searchKey" autocorrect="off" >
+                    <button class="button button-clear" ng-click="clearSearch()">X</button>
+                </label>
+            </div>
+            <div class="col">
+                <button class="button button-light" ng-click="search()">Search</button>
+                <a class="button button-light button-balanced" >Custom search</a>
+                <a class="button button-light button-positive" href="#/ngo/{{offers[0].ngo.objectId}}">About NGO</a>
+            </div>
+        </div>
+    </div>
+    <ion-content class="has-header has-subheader">
+        <ion-list>
+            <ion-item ng-repeat="offer in offers" type="item-text-wrap" class="item-avatar"
+                      href="#/desc/{{offer.ngo.objectId}}/{{offer.objectId}}">
+                <img src="{{offer.ngo.pic.url}}"/>
+                {{offer.offerTitle}}
+                <p>{{offer.duration}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+</ion-view>

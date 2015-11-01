@@ -1,0 +1,44 @@
+<ion-view title="NGOs">
+
+    <div class="bar bar-subheader item-input-inset">
+        <div class="row responsive-sm" style="width:100%;position: inherit ">
+            <div class="col col-75">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input id="searchKey" type="search" placeholder="Search" ng-model="searchKey" autocorrect="off" >
+                    <button class="button button-clear" ng-click="clearSearch()">X</button>
+                </label>
+            </div>
+            <div class="col">
+                <button class="button button-light icon-right ion-ios-search-strong" ng-click="search()">Quick search</button>
+                <a class="button icon-right ion-ios-glasses-outline button-calm" >Custom search</a>
+
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="has-header has-subheader">
+        <ion-list>
+            <ion-item ng-repeat="ngo in ngos" type="item-text-wrap" class="item-avatar"
+                      href="#/ngoOffers/{{ngo.objectId}}" ng-style="{'height': '10%'}">
+                <!--<img src="{{ngo.pic.url}}"/>
+                <rating ng-model="ngo.rating" max="5">{{ngo.rating}}</rating>
+                {{ngo.ngoName}}
+                <p>{{ngo.address}}</p>-->
+                <div class="row">
+                    <div class="col col-40">
+                        <img src="{{ngo.pic.url}}"/>
+                    </div>
+                    <div class="col col-40">
+                        {{ngo.ngoName}}
+                        <p>{{ngo.address}}</p>
+                    </div>
+                    <div class="col">
+                        <rating readonly="true" ng-model="ngo.rating" max="5">{{ngo.rating}}</rating>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+</ion-view>

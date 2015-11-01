@@ -1,0 +1,44 @@
+<ion-view title="{{offer.offerTitle}}">
+    <ion-content has-header="true" padding="true">
+
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Description</span>
+                <input type="text" placeholder="Description" ng-model="offer.description">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Contact Person</span>
+                <input type="text" placeholder="Contact Name" ng-model="offer.contactName">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Phone Number</span>
+                <input type="text" placeholder="Phone Number" ng-model="offer.phoneNo">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Offer Type</span>
+                <input type="text" placeholder="Offer Type" ng-model="offer.offerType">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Offer Date</span>
+                <input type="text" placeholder="Offer Date" ng-model="offer.offerDate.iso">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Duration</span>
+                <input type="text" placeholder="Duration" ng-model="offer.duration">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Requirement</span>
+                <input type="text" placeholder="Requirement" ng-model="offer.nofpeople">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="Email" ng-model="offer.ngo.email">
+            </label>
+        </div>
+        <div class="pull-right">
+            <a class="button icon-right ion-chevron-right button-energized" href="#/ngo/{{offer.ngo.objectId}}/{{offer.objectId}}/bookNow">Volunteer Now</a>
+            <a class="button icon-right ion-more button-positive ">Pre-book</a>
+        </div>
+    </ion-content>
+
+</ion-view>

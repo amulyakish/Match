@@ -1,0 +1,10 @@
+{
+  "name": "Match",
+  "description": "App to match volunteers and NGOs",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "~4.4.3",
+    "parse": "^1.6.7"
+  }
+}

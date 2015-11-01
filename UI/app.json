@@ -1,0 +1,7 @@
+{
+    "name": "Match",
+    "description": "App to match NGOs with volunteers",
+    "repository": "https://bitbucket.org/sam0302/match-ui",
+    "logo": "https://node-js-sample.herokuapp.com/node.svg",
+    "keywords": ["node", "express", "ionic", "match"]
+}
